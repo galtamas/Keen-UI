@@ -1,5 +1,5 @@
 <template>
-    <div class="ui-textbox" :class="classes">
+    <div class="ui-textbox" :class="classes testGT">
         <div class="ui-textbox__icon-wrapper" v-if="icon || $slots.icon">
             <slot name="icon">
                 <ui-icon :icon="icon"></ui-icon>
