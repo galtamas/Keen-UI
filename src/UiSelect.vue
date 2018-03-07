@@ -620,6 +620,7 @@ export default {
     outline: none;
     position: relative;
 
+    /*
     &:hover:not(.is-disabled) {
         .ui-select__label-text {
             color: $ui-input-label-color--hover;
@@ -633,6 +634,7 @@ export default {
             color: $ui-input-button-color--hover;
         }
     }
+    */
 
     &.is-active:not(.is-disabled) {
         .ui-select__label-text,
