@@ -350,6 +350,7 @@ export default {
     display: flex;
     font-family: $font-stack;
     margin-bottom: $ui-input-margin-bottom;
+    cursor: pointer;
 
     &:hover:not(.is-disabled) {
         .ui-textbox__label-text {
@@ -510,6 +511,11 @@ export default {
     margin: 0;
     padding-top: $ui-input-feedback-padding-top;
     position: relative;
+}
+
+.ui-textbox--file .ui-textbox__feedback-text {
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, .87);
 }
 
 .ui-textbox__counter {
