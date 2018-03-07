@@ -45,10 +45,11 @@
                     @focus="onFocus"
                     @input="updateValue($event.target.value)"
                     @keydown.down.prevent="highlightSuggestion(highlightedIndex + 1)"
-                    @keydown.enter="selectHighlighted(highlightedIndex, $event)"
-                    @keydown.esc="closeDropdown"
+                    @keydown.enter.stop="selectHighlighted(highlightedIndex, $event)"
+                    @keydown.esc.stop="closeDropdown"
                     @keydown.tab="closeDropdown"
                     @keydown.up.prevent="highlightSuggestion(highlightedIndex - 1)"
+                    @keydown="!!onKeydown && onKeydown($event)"
 
                     v-autofocus="autofocus"
                 >
@@ -162,7 +163,7 @@ export default {
             type: Boolean,
             default: false
         },
-        filter: Function,
+        //filter: Function,
         highlightOnFirstMatch: {
             type: Boolean,
             default: true
@@ -193,7 +194,8 @@ export default {
             isActive: false,
             isTouched: false,
             showDropdown: false,
-            highlightedIndex: -1
+            highlightedIndex: -1,
+            filter: undefined
         };
     },
 
