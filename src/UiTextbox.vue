@@ -1,5 +1,5 @@
 <template>
-    <div class="ui-textbox" :class="classes testGT">
+    <div class="ui-textbox" :class="classes">
         <div class="ui-textbox__icon-wrapper" v-if="icon || $slots.icon">
             <slot name="icon">
                 <ui-icon :icon="icon"></ui-icon>
@@ -154,8 +154,6 @@ export default {
             type: Boolean,
             default: false
         },
-        help: String,
-        error: String,
         invalid: {
             type: Boolean,
             default: false
@@ -171,7 +169,9 @@ export default {
             isActive: false,
             isTouched: false,
             initialValue: this.value,
-            autosizeInitialized: false
+            autosizeInitialized: false,
+            help: undefined,
+            error: undefined,
         };
     },
 
@@ -272,6 +272,14 @@ export default {
             this.$emit('input', value);
         },
 
+        updateHelp(str) {
+            this.help = str;
+        },
+        
+        updateError(str) {
+            this.error = str;
+        },
+        
         onChange(e) {
             this.$emit('change', this.value, e);
         },
