@@ -154,10 +154,6 @@ export default {
             type: Boolean,
             default: false
         },
-        invalid: {
-            type: Boolean,
-            default: false
-        },
         disabled: {
             type: Boolean,
             default: false
@@ -172,6 +168,7 @@ export default {
             autosizeInitialized: false,
             help: undefined,
             error: undefined,
+            invalid: false
         };
     },
 
@@ -278,6 +275,10 @@ export default {
         
         updateError(str) {
             this.error = str;
+        },
+
+        updateInvalid(b) {
+            this.invalid = b;
         },
         
         onChange(e) {
