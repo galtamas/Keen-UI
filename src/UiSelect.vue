@@ -28,7 +28,7 @@
                 @keydown.113.prevent="openDropdown"
                 @keydown.space.prevent="openDropdown"
                 @keydown.tab="onBlur"
-                @keydown.stop="!!onKeydown && onKeydown($event)"
+                @keydown="!!onKeydown && onKeydown($event)"
             >
                 <div
                     class="ui-select__label-text"
@@ -392,6 +392,10 @@ export default {
 
     methods: {
         setValue(value) {
+            if (this.disabled) {
+                return;
+            }
+
             value = value ? value : this.multiple ? [] : '';
 
             this.$emit('input', value);
