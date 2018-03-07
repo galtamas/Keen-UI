@@ -104,8 +104,8 @@ $ui-select-option-checkbox-color: rgba(black, 0.38) !default;
     user-select: none;
 
     &.is-selected {
-        background-color: rgba(black, 0.05);
-        color: $brand-primary-color;
+        /*background-color: rgba(black, 0.05);
+        color: $brand-primary-color;*/
         font-weight: 500;
 
         .ui-select-option__checkbox {
@@ -114,7 +114,10 @@ $ui-select-option-checkbox-color: rgba(black, 0.38) !default;
     }
 
     &.is-highlighted {
-        background-color: rgba(black, 0.1);
+        /*background-color: rgba(black, 0.1);*/
+        background-color: var(--colors-primary);
+        color: var(--colors-fg-primary);
+        fill: var(--colors-fg-primary);
     }
 }
 

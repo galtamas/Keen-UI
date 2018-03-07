@@ -28,6 +28,7 @@
                 @keydown.113.prevent="openDropdown"
                 @keydown.space.prevent="openDropdown"
                 @keydown.tab="onBlur"
+                @keydown.stop="!!onKeydown && onKeydown($event)"
             >
                 <div
                     class="ui-select__label-text"
