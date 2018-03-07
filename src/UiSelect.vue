@@ -25,7 +25,7 @@
                 :tabindex="disabled ? null : '0'"
 
                 @focus="onFocus"
-                @keydown.enter.prevent="openDropdown"
+                @keydown.113.prevent="openDropdown"
                 @keydown.space.prevent="openDropdown"
                 @keydown.tab="onBlur"
             >
@@ -72,6 +72,7 @@
                         @keydown.esc.prevent.stop="closeDropdown()"
                         @keydown.tab="onBlur"
                         @keydown.up.prevent="highlightOption(highlightedIndex - 1)"
+                        @keydown.stop="!!onKeydown && onKeydown($event)"
                     >
                         <div
                             class="ui-select__search"
