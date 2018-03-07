@@ -873,17 +873,6 @@ export default {
     position: relative;
 }
 
-.ui-select-option.is-selected {
-    background-color: inherit;
-    color: inherit;
-}
-
-.ui-select-option.is-highlighted {
-    background-color: var(--colors-primary);
-    color: var(--colors-fg-primary);
-    fill: var(--colors-fg-primary);
-}
-
 .ui-select__no-results {
     color: $secondary-text-color;
     font-size: rem-calc(14px);
