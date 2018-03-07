@@ -20,6 +20,7 @@
             <div
                 class="ui-select__label"
                 ref="label"
+                :name="name"
 
                 :tabindex="disabled ? null : '0'"
 
@@ -68,7 +69,7 @@
 
                         @keydown.down.prevent="highlightOption(highlightedIndex + 1)"
                         @keydown.enter.prevent.stop="selectHighlighted(highlightedIndex, $event)"
-                        @keydown.esc.prevent="closeDropdown()"
+                        @keydown.esc.prevent.stop="closeDropdown()"
                         @keydown.tab="onBlur"
                         @keydown.up.prevent="highlightOption(highlightedIndex - 1)"
                     >
@@ -120,7 +121,6 @@
                                 :type="type"
 
                                 @click.native.stop="selectOption(option, index)"
-                                @mouseover.native.stop="highlightOption(index, { autoScroll: false })"
 
                                 v-for="(option, index) in filteredOptions"
                             >
