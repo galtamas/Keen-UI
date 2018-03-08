@@ -45,8 +45,8 @@
                     @focus="onFocus"
                     @input="updateValue($event.target.value)"
                     @keydown.down.prevent="highlightSuggestion(highlightedIndex + 1)"
-                    @keydown.enter.stop="selectHighlighted(highlightedIndex, $event)"
-                    @keydown.esc.stop="closeDropdown"
+                    @keydown.enter="selectHighlighted(highlightedIndex, $event)"
+                    @keydown.esc="closeDropdown"
                     @keydown.tab="closeDropdown"
                     @keydown.up.prevent="highlightSuggestion(highlightedIndex - 1)"
                     @keydown="!!onKeydown && onKeydown($event)"
@@ -345,6 +345,7 @@ export default {
         selectHighlighted(index, e) {
             if (this.showDropdown && this.$refs.suggestions.length > 0) {
                 e.preventDefault();
+                e.stopPropagation();
                 this.selectSuggestion(this.$refs.suggestions[index].suggestion);
             }
         },
@@ -356,13 +357,14 @@ export default {
             }
         },
 
-        closeDropdown() {
+        closeDropdown(e) {
             if (this.showDropdown) {
                 this.$nextTick(() => {
                     this.showDropdown = false;
                     this.highlightedIndex = -1;
                     this.$emit('dropdown-close');
                 });
+                e.stopPropagation()
             }
         },
 
