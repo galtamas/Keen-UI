@@ -133,12 +133,12 @@ export default {
             type: String,
             default: 'simple' // 'simple' or 'image'
         },
-        suggestions: {
-            type: Array,
-            default() {
-                return [];
-            }
-        },
+        // suggestions: {
+        //     type: Array,
+        //     default() {
+        //         return [];
+        //     }
+        // },
         limit: {
             type: Number,
             default: 8
@@ -195,7 +195,8 @@ export default {
             isTouched: false,
             showDropdown: false,
             highlightedIndex: -1,
-            filter: undefined
+            filter: undefined,
+            suggestions: []
         };
     },
 
