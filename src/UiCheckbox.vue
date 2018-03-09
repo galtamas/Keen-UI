@@ -13,6 +13,7 @@
             @change="onChange"
             @click="onClick"
             @focus="onFocus"
+            @keydown.space="onClick"
         >
 
         <div class="ui-checkbox__checkmark">

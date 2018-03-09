@@ -399,6 +399,11 @@ export default {
             value = value ? value : this.multiple ? [] : '';
 
             this.$emit('input', value);
+            //this.$emit('change', value);
+            this.onChange(value)
+        },
+
+        onChange(value) {
             this.$emit('change', value);
         },
 
