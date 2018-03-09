@@ -3,6 +3,7 @@
         <input
             class="ui-checkbox__input"
             type="checkbox"
+            ref="input"
 
             :checked.prop="isChecked"
             :disabled="disabled"

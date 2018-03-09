@@ -16,7 +16,7 @@
                     <slot>{{ label }}</slot>
                 </div>
 
-                <ui-icon
+                <!--<ui-icon
                     class="ui-autocomplete__clear-button"
                     title="Clear"
 
@@ -27,7 +27,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M18.984 6.422L13.406 12l5.578 5.578-1.406 1.406L12 13.406l-5.578 5.578-1.406-1.406L10.594 12 5.016 6.422l1.406-1.406L12 10.594l5.578-5.578z"/>
                     </svg>
-                </ui-icon>
+                </ui-icon>-->
 
                 <input
                     autocomplete="off"
@@ -364,7 +364,7 @@ export default {
                     this.highlightedIndex = -1;
                     this.$emit('dropdown-close');
                 });
-                e.stopPropagation()
+                if (e) e.stopPropagation();
             }
         },
 
