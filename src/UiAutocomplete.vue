@@ -49,6 +49,7 @@
                     @keydown.esc="closeDropdown"
                     @keydown.tab="closeDropdown"
                     @keydown.up.prevent="highlightSuggestion(highlightedIndex - 1)"
+                    @keydown.113.prevent="openDropdown"
                     @keydown="!!onKeydown && onKeydown($event)"
 
                     v-autofocus="autofocus"

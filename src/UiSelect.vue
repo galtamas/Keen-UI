@@ -391,6 +391,10 @@ export default {
     },
 
     methods: {
+        onKeydown(e){
+            this.$emit('keydown', e);
+        },
+
         setValue(value) {
             if (this.disabled) {
                 return;
@@ -580,9 +584,11 @@ export default {
         },
 
         onExternalScroll(e) {
+            /*
             if (e.target !== this.$refs.optionsList) {
                 this.closeDropdown();
             }
+            */
         },
 
         scrollOptionIntoView(optionEl) {
